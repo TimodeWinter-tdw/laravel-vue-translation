@@ -27,10 +27,16 @@ class LaravelVueTranslation
 
     public function compile()
     {
-        $this->printCompileStarted();
+        if (app()->runningInConsole()) {
+            $this->printCompileStarted();
+        }
+
         $this->setTranslations();
         $this->translationFileHelper->write($this->translations);
-        $this->printCompileEnded();
+
+        if (app()->runningInConsole()) {
+            $this->printCompileEnded();
+        }
     }
 
     private function addArrayLevels(array $keys, array $target, $data)
@@ -51,7 +57,10 @@ class LaravelVueTranslation
         $this->translations = [];
         foreach ($this->translationFileHelper->fetch() as $file) {
             $path = $file->getRelativePathName();
-            $this->printFileCompiled($path);
+
+            if (app()->runningInConsole()) {
+                $this->printFileCompiled($path);
+            }
             $delimiter = strpos($path, '/') !== false ? '/' : '\\';
             
             $array = array_map(function ($key) use ($file) {
