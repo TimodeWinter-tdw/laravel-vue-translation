@@ -17,7 +17,7 @@ class TranslationServiceProvider extends ServiceProvider
             ]);
         }
         $this->publishes([
-            __DIR__ . '/resources/js/plugins' => resource_path('js/plugins/translations')
+            __DIR__ . '/resources/js/plugins' => resource_path('js/plugins')
         ]);
     }
 
