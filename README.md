@@ -17,7 +17,7 @@ This package helps you to have Laravel translation functionality in your client 
  ```bash
  php artisan vendor:publish --provider="Timodw\Translation\TranslationServiceProvider"
  ```
- > This will publish the **Translation.js** file in **resources/js/VueTranslation** directory  
+ > This will publish the **translations.js** file in **resources/js/VueTranslation** directory  
  
  Run the artisan command
  ```bash

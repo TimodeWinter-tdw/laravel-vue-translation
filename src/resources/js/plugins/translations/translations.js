@@ -28,5 +28,10 @@ export default {
              word=word.replace(`:${i}`,replacements[i]);
          }
          return word;
+    },
+    install: (app, options) => {
+        app.config.globalProperties.$t = (key, replacements) => {
+            return this.translate(key, replacements);
+        }
     }
 }
