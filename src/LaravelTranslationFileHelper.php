@@ -22,7 +22,7 @@ class LaravelTranslationFileHelper implements TranslationFileHelper
     public function write(array $data, string $path = null)
     {
         if ($path === null) {
-            $path = $this->resourcePath();
+            $path = $this->destinationPath();
         }
 
         if (!File::exists($path)) {
