@@ -2,7 +2,7 @@
 
 namespace Timodw\Translation;
 
-use Tohidplus\Translation\Contract\TranslationFileHelper;
+use Timodw\Translation\Contract\TranslationFileHelper;
 
 class LaravelVueTranslation
 

@@ -7,7 +7,7 @@ namespace Timodw\Translation\FileWatcher;
 use ElementaryFramework\FireFS\Events\FileSystemEvent;
 use ElementaryFramework\FireFS\Listener\IFileSystemListener;
 use Timodw\Translation\CLIPrinter;
-use Tohidplus\Translation\Facades\VueTranslation;
+use Timodw\Translation\Facades\VueTranslation;
 
 class Listener implements IFileSystemListener
 {

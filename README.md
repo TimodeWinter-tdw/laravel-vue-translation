@@ -9,13 +9,13 @@ This package helps you to have Laravel translation functionality in your client 
  ```php
 'providers' => [
     //
-    Tohidplus\Translation\TranslationServiceProvider::class,
+    Timodw\Translation\TranslationServiceProvider::class,
     //
   ];
  ```
  Publish the package assets by running the command
  ```bash
- php artisan vendor:publish --provider="Tohidplus\Translation\TranslationServiceProvider"
+ php artisan vendor:publish --provider="Timodw\Translation\TranslationServiceProvider"
  ```
  > This will publish the **Translation.js** file in **resources/js/VueTranslation** directory  
  
