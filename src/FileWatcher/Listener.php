@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Tohidplus\Translation\FileWatcher;
+namespace Timodw\Translation\FileWatcher;
 
 
 use ElementaryFramework\FireFS\Events\FileSystemEvent;
 use ElementaryFramework\FireFS\Listener\IFileSystemListener;
-use Tohidplus\Translation\CLIPrinter;
+use Timodw\Translation\CLIPrinter;
 use Tohidplus\Translation\Facades\VueTranslation;
 
 class Listener implements IFileSystemListener

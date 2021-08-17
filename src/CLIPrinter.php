@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tohidplus\Translation;
+namespace Timodw\Translation;
 
 class CLIPrinter
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tohidplus\Translation\Facades;
+namespace Timodw\Translation\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

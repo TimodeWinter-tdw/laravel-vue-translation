@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tohidplus\Translation\Contract;
+namespace Timodw\Translation\Contract;
 
 
 interface TranslationFileHelper

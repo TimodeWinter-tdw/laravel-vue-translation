@@ -1,11 +1,11 @@
 <?php
 
-namespace Tohidplus\Translation;
+namespace Timodw\Translation;
 
 use ElementaryFramework\FireFS\FireFS;
 use ElementaryFramework\FireFS\Watcher\FileSystemWatcher;
 use Illuminate\Support\ServiceProvider;
-use Tohidplus\Translation\Console\Commands\Translation;
+use Timodw\Translation\Console\Commands\Translation;
 
 class TranslationServiceProvider extends ServiceProvider
 {

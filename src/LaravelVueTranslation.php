@@ -1,6 +1,6 @@
 <?php
 
-namespace Tohidplus\Translation;
+namespace Timodw\Translation;
 
 use Tohidplus\Translation\Contract\TranslationFileHelper;
 

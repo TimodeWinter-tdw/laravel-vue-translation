@@ -1,9 +1,9 @@
 <?php
 
-namespace Tohidplus\Translation;
+namespace Timodw\Translation;
 
 use Illuminate\Support\Facades\File;
-use Tohidplus\Translation\Contract\TranslationFileHelper;
+use Timodw\Translation\Contract\TranslationFileHelper;
 
 class LaravelTranslationFileHelper implements TranslationFileHelper
 {

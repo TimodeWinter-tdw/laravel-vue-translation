@@ -1,7 +1,3 @@
-[![GitHub issues](https://img.shields.io/github/issues/tohidplus/laravel-vue-translation.svg)](https://github.com/tohidplus/laravel-vue-translation/issues)
-[![GitHub stars](https://img.shields.io/github/stars/tohidplus/laravel-vue-translation.svg)](https://github.com/tohidplus/laravel-vue-translation/stargazers)
-[![Total Downloads](https://img.shields.io/packagist/dt/tohidplus/laravel-vue-translation.svg)](https://packagist.org/packages/tohidplus/laravel-vue-translation)
-[![GitHub license](https://img.shields.io/github/license/tohidplus/laravel-vue-translation.svg)](https://github.com/tohidplus/mellat/blob/master/LICENSE.txt)
 # Laravel translation in VueJS
 This package helps you to have Laravel translation functionality in your client side applications specially in Vue js 
 ### Get started
