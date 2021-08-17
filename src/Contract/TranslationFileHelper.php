@@ -8,7 +8,7 @@ interface TranslationFileHelper
 {
     public function fetch();
 
-    public function write(array $data);
+    public function write(array $data, string $path = null);
 
     public function resourcePath();
 

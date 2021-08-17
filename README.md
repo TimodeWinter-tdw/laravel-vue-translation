@@ -7,7 +7,7 @@ This package helps you to have Laravel translation functionality in your client 
 ### Get started
  install the package via composer
  ```bash
- composer require tohidplus/laravel-vue-translation
+ composer require timodw-nl/laravel-vue-translation
  ```
  In the **config/app.php** file add the service provider
  ```php

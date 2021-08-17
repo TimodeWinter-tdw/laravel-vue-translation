@@ -1,4 +1,4 @@
-const translations = require('./translations');
+const translations = require('./translations.json');
 export default {
     translate(key,replacements={}) {
         let lang = document.documentElement.lang;

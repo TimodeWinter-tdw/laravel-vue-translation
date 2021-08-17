@@ -19,12 +19,16 @@ class LaravelTranslationFileHelper implements TranslationFileHelper
     /**
      * @param array $data
      */
-    public function write(array $data)
+    public function write(array $data, string $path = null)
     {
-        if (!File::exists($this->destinationPath())) {
-            File::makeDirectory($this->destinationPath(), 0755, true, true);
+        if ($path === null) {
+            $path = $this->resourcePath();
         }
-        File::put($this->destinationPath() . '/translations.json', json_encode($data));
+
+        if (!File::exists($path)) {
+            File::makeDirectory($path, 0755, true, true);
+        }
+        File::put($path . '/translations.json', json_encode($data));
     }
 
     /**
@@ -40,6 +44,6 @@ class LaravelTranslationFileHelper implements TranslationFileHelper
      */
     public function destinationPath()
     {
-        return resource_path('js/VueTranslation');
+        return resource_path('js/plugins/translations');
     }
 }

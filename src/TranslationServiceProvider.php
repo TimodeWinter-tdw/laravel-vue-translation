@@ -17,7 +17,7 @@ class TranslationServiceProvider extends ServiceProvider
             ]);
         }
         $this->publishes([
-            __DIR__ . '/resources/js/VueTranslation' => resource_path('js/VueTranslation')
+            __DIR__ . '/resources/js/plugins' => resource_path('js/VueTranslation')
         ]);
     }
 
