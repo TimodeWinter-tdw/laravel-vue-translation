@@ -1,57 +1,38 @@
 # Laravel translation in VueJS
-This package helps you to have Laravel translation functionality in your client side applications specially in Vue js 
+Vue 3 package to use your Laravel translations in your vue templates.
+
 ### Get started
  install the package via composer
  ```bash
  composer require timodw-nl/laravel-vue-translation
  ```
- In the **config/app.php** file add the service provider
- ```php
-'providers' => [
-    //
-    Timodw\Translation\TranslationServiceProvider::class,
-    //
-  ];
- ```
- Publish the package assets by running the command
+
+ ####Publish the package assets by running the command
  ```bash
  php artisan vendor:publish --provider="Timodw\Translation\TranslationServiceProvider"
  ```
- > This will publish the **translations.js** file in **resources/js/VueTranslation** directory  
+ This will publish the **translations.js** file in **resources/js/plugin/translations** directory  
  
- Run the artisan command
+ ####Run the artisan command
  ```bash
- php artisan VueTranslation:generate --watch=1
+ php artisan VueTranslation:generate
  ```
-  > This will compile down all the translation files in the **resources/lang** directory in the file **resources/js/VueTranslation/translations.json** 
+This will compile down all the translation files in the **resources/lang** directory in the file **resources/js/plugins/translations/translations.json**.
  
- Open the file **resources/js/app.js** and add the Translation helper
+#### Add to vue
  ```js
-window.Vue = require('vue');
-// If you want to add to window object
-window.tranlate=require('./VueTranslation/Translation').default.translate;
+import {createApp} from "vue";
+import translationsPlugin from "./plugins/translations/translations";
 
-// If you want to use it in your vue components
-Vue.prototype.translate=require('./VueTranslation/Translation').default.translate;
-```  
-Compile the assets by running the command
-```bash
-npm run development
-// or watch or production
+const app = createApp(App);
+app.use(translationsPlugin);
+app.mount('#app');
 ```
 
 ### How to switch the languages?
 This will get the current language form the document **lang** attribute
 ```html
-<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Document</title>
-    </head>
-    <body>
-    
-    </body>
-</html>
 ```
 ### How to use?
 Imagine this is the directory structure of **resources/lang** 
@@ -62,7 +43,7 @@ Imagine this is the directory structure of **resources/lang**
    |--passwords.php
    |--validation.php
    |--messages.php
-|--fr
+|--nl
    |--auth.php
    |--pagination.php
    |--passwords.php
@@ -72,51 +53,28 @@ Imagine this is the directory structure of **resources/lang**
 And the **messages.php** file is something like
 ```php
 return [
-    'foo'=>[
-        'bar'=>'Some message'
+    'foo' => [
+        'bar' => 'Some message'
     ]
 ];
 ```
-You can get the value by calling the **translate** method
+You can get the value by calling the **$t** directive
 ```js
-translate('messages.foo.bar')
+$t('messages.foo.bar')
 ```
-Example in Vue component
-```vue
-<template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-                    <div class="card-body">
-                        {{translate('messages.foo.bar')}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
-
-<script>
-    export default {
-      
-    }
-</script>
-```
-### Uses Fallback Locale
-> To interact same like **Laravel**   trans() insert in your layout 
+#### Uses Fallback Locale
+To interact same like **Laravel** trans() insert in your layout:
 ```html
 <meta name="fallback_locale" content="{{ config('app.fallback_locale') }}">
 ```
 
-### Replace attributes
+#### Replace attributes
 > It's not recommended to use this package for showing validation errors but if you want you can replace :attribute, :size
-etc by passing the second argument as an object.
+etc. by passing the second argument as an object.
 ```js
-translate('validation.required',{
-    attribute:translate('validation.attributes.title')
+$t('validation.required',{
+    attribute:$t('validation.attributes.title')
 });
 ```
-> **Notice:** if it could not find the value for the key you passed it will return the exact key
+> **Notice:** just like in laravel if it could not find the value for the key you passed it will return the exact key
  
