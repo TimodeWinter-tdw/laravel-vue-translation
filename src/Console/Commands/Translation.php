@@ -12,7 +12,7 @@ class Translation extends Command
      *
      * @var string
      */
-    protected $signature = 'VueTranslation:generate {--watch=0}';
+    protected $signature = 'VueTranslation:generate';
 
     /**
      * The console command description.
