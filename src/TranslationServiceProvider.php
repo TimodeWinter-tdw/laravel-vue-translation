@@ -5,6 +5,7 @@ namespace Timodw\Translation;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 use Timodw\Translation\Console\Commands\Translation;
+use Timodw\Translation\Facades\VueTranslation;
 
 class TranslationServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,7 @@ class TranslationServiceProvider extends ServiceProvider
             $files = File::allFiles(resource_path('lang'));
             foreach ($files as $file) {
                 if ($file->getMTime() > $lastModified) {
-                    \Artisan::call('VueTranslation:generate');
+                    VueTranslation::compile();
                 }
             }
         }
