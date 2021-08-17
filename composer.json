@@ -1,12 +1,12 @@
 {
-    "name": "tohidplus/laravel-vue-translation",
+    "name": "timodw/laravel-vue-translation",
     "description": "A package to have Laravel translation feature in VueJs",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Tohid",
-            "email": "tohid.dadashnejad@gmail.com"
+            "name": "Timo de Winter",
+            "email": "info@timodw.nl"
         }
     ],
     "minimum-stability": "dev",
@@ -15,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Tohidplus\\Translation\\": "src/"
+            "Timodw\\Translation\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tohidplus\\Translation\\TranslationServiceProvider"
+                "Timodw\\Translation\\TranslationServiceProvider"
             ]
         }
     }
