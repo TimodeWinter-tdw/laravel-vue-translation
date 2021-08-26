@@ -44,6 +44,6 @@ class LaravelTranslationFileHelper implements TranslationFileHelper
      */
     public function destinationPath()
     {
-        return resource_path('js/plugins/translations');
+        return resource_path('js/admin/plugins/translations');
     }
 }
