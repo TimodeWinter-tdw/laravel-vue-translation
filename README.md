@@ -7,19 +7,19 @@ Vue 3 package to use your Laravel translations in your vue templates.
  composer require timodw-nl/laravel-vue-translation
  ```
 
- ####Publish the package assets by running the command
+ ###Publish the package assets by running the command
  ```bash
  php artisan vendor:publish --provider="Timodw\Translation\TranslationServiceProvider"
  ```
  This will publish the **translations.js** file in **resources/js/plugin/translations** directory  
  
- ####Run the artisan command
+ ###Run the artisan command
  ```bash
  php artisan VueTranslation:generate
  ```
 This will compile down all the translation files in the **resources/lang** directory in the file **resources/js/plugins/translations/translations.json**.
  
-#### Add to vue
+### Add to vue
  ```js
 import {createApp} from "vue";
 import translationsPlugin from "./plugins/translations/translations";
