@@ -1,6 +1,7 @@
 {
     "name": "timodw/laravel-vue-translation",
     "description": "A package to have Laravel translation feature in VueJs",
+    "version": "1.0.1",
     "type": "library",
     "license": "MIT",
     "authors": [
