@@ -21,7 +21,12 @@ class TranslationServiceProvider extends ServiceProvider
         ]);
 
         if (config('app.env') === 'local') {
-            $lastModified = File::lastModified(resource_path('js/plugins/translations/translations.json'));
+            $path = resource_path('js/plugins/translations/translations.json');
+            if (!File::exists($path)) {
+                return;
+            }
+
+            $lastModified = File::lastModified($path);
 
             $files = File::allFiles(resource_path('lang'));
             foreach ($files as $file) {
