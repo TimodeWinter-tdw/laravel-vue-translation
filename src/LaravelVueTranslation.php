@@ -27,16 +27,9 @@ class LaravelVueTranslation
 
     public function compile()
     {
-        if (app()->runningInConsole()) {
-            $this->printCompileStarted();
-        }
-
         $this->setTranslations();
         $this->translationFileHelper->write($this->translations);
 
-        if (app()->runningInConsole()) {
-            $this->printCompileEnded();
-        }
     }
 
     private function addArrayLevels(array $keys, array $target, $data)
@@ -58,9 +51,6 @@ class LaravelVueTranslation
         foreach ($this->translationFileHelper->fetch() as $file) {
             $path = $file->getRelativePathName();
 
-            if (app()->runningInConsole()) {
-                $this->printFileCompiled($path);
-            }
             $delimiter = strpos($path, '/') !== false ? '/' : '\\';
             
             $array = array_map(function ($key) use ($file) {
@@ -75,26 +65,5 @@ class LaravelVueTranslation
             
             $this->translations = array_merge_recursive($this->translations, $nestedArray);
         }
-    }
-
-    protected function printCompileStarted(): void
-    {
-        CLIPrinter::clear();
-        CLIPrinter::print("\n\nCompiling...\n", CLIPrinter::FOREGROUND_BLUE, CLIPrinter::BACKGROUND_BLACK);
-        usleep(50000);
-    }
-
-    /**
-     * @param $path
-     */
-    private function printFileCompiled($path): void
-    {
-        CLIPrinter::print($path, CLIPrinter::FOREGROUND_YELLOW, CLIPrinter::BACKGROUND_BLACK);
-        usleep(25000);
-    }
-
-    private function printCompileEnded()
-    {
-        CLIPrinter::print("\nThe translations.json file updated successfully.", CLIPrinter::FOREGROUND_GREEN);
     }
 }
