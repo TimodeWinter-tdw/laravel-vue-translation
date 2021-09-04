@@ -15,7 +15,7 @@ Vue 3 package to use your Laravel translations in your vue templates.
  
  ###Run the artisan command
  ```bash
- php artisan VueTranslation:generate
+ php artisan translation:generate
  ```
 This will compile down all the translation files in the **resources/lang** directory in the file **resources/js/plugins/translations/translations.json**.
  
